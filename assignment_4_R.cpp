@@ -6,7 +6,7 @@
                a random in each base n notation where n is each user-
                -inputted base.
 */
-
+#include "baseNNotation.h"
 /*
 //Name: main()
 //Parameter(s): none
