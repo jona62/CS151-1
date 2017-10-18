@@ -15,55 +15,24 @@
 #include <cstdlib>
 using namespace std;
 
-//variable initialized in global scope for use in void functions
-string output = " ";
-
-/*
-//Name: reverseStr()
-//Parameter(s): string&
-//Return: none
-//Label     Task                                      Goto
-//01        (start: str)                              02
-//02        [str.length --> int n]                    03
-//03        [0 --> int i] < i < (n / 2) >             04,05
-//04        [swap(str[i], str[n - i - 1]), i++]       03
-//05        (exit)
-*/
-void reverseStr(string &str)
-{
-    int n = str.length();
-    for (int i = 0; i < (n / 2); i++)
-       swap(str[i], str[n - i - 1]);
-}
-
 /*
 //Name: NumberGenerator()
 //Parameter(s): int base, value
 //Return: none
 //Label   Task                                      Goto
 //01      (start: base, value)                      02
-//02      < value < 1 >                             03,07
-//03      [output + "0" --> output]                 04
-//04      [reverseStr(output)]                      05
-//05      /print(output)/                           06
-//06      [" " --> output]                          07
-//07      < value > 0 >                             08,11
-//08      [base + to_string((value % base)) --> ]   09
-//09      [(value / base) --> value]                10
-//10      [NumberGenerator(base, value)]            07
-//11      (exit)
+//02      < value > 0 >                             03,05
+//03      [(value / base) --> value]                04
+//04      (exit: self(base, value))                 05
+//05      /print(value % base)/                     06
+//06      (exit)
 */
 void NumberGenerator(int base, int value) {
-  if (value < 1)  {
-    output += "0";
-    reverseStr(output);
-    cout << output;
-    output = " ";
-  } else if (value > 0) {
-    output += to_string((value % base));
+  if (value > 0)  {
     value = value / base;
     NumberGenerator(base, value);
   }
+  cout << (value % base);
 }
 
 /*
