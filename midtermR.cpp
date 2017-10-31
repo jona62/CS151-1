@@ -9,6 +9,7 @@ using namespace std;
 int main() {
   float subtotal = 20;
   float tax, total;
+  int length;
   string userAppetizer, userEntree1, userEntree2;
 
   string appetizers[] = {
@@ -33,15 +34,15 @@ int main() {
   };
 
   menuA();
-  choiceA(appetizers, userAppetizer);
+  length = end(appetizers) - begin(appetizers);
+  choice(appetizers, length, userAppetizer);
 
   menuB();
-  choiceB(entrees, userEntree1);
-  choiceB(entrees, userEntree2);
+  length = end(entrees) - begin(entrees);
+  choice(entrees, length, userEntree1);
+  choice(entrees, length, userEntree2);
 
-  subtotal = getSubtotal(subtotal, entrees, userEntree1, userEntree2);
-  tax = getTax(subtotal);
-  total = getTotal(subtotal, tax);
+  subtotal = getCalculate(subtotal, tax, total, entrees, userEntree1, userEntree2);
 
   receipt(userAppetizer, userEntree1, userEntree2, subtotal, tax, total);
   return 0;

@@ -1,6 +1,7 @@
 #ifndef RESTAURANT_H
 #define RESTAURANT_H
 
+#define length(array) (sizeof(array)/sizeof(array[0]))
 
 void menuA() {
     cout << "Appetizers:\n";
@@ -27,35 +28,24 @@ void menuB() {
     cout << "What would you like? Please choose two items by number:\n";
 }
 
-string choiceA(string appetizer[], string& item) {
+string choice(string menu[], int lengthOflist, string& item) {
   int menuNumber;
     getline(cin, item);
     stringstream(item) >> menuNumber;
-
-    if (menuNumber >= 1 && menuNumber <= 10)
+    if (menuNumber <= lengthOflist)
     {
-      item = appetizer[menuNumber - 1];
+      item = menu[menuNumber - 1];
+    } else {
+      item = menu[0];
     }
-    else { item = appetizer[0]; }
-
   return item;
   }
 
-string choiceB(string entree[], string& item) {
-  int menuNumber;
-    getline(cin, item);
-    stringstream(item) >> menuNumber;
 
-      if (menuNumber >= 1 && menuNumber <= 10)
-      {
-        item = entree[menuNumber - 1];
-      }
-      else { item = entree[0]; }
+float getCalculate(float subtotal, float& tax, float& total, string entree[], string entree1, string entree2) {
+  tax = ( subtotal - (subtotal * 0.887) );
+  total = ( subtotal + tax );
 
-  return item;
-}
-
-float getSubtotal(float subtotal, string entree[], string entree1, string entree2) {
   if (entree1 == entree[2] || entree1 == entree[6]) {
     subtotal += 3.5;
   }
@@ -65,22 +55,8 @@ float getSubtotal(float subtotal, string entree[], string entree1, string entree
   return subtotal;
 }
 
-float getTax(float subtotal) {
-  return ( subtotal - (subtotal * 0.887) );
-}
-
-float getTip(float subtotal, float percentage) {
-  return (subtotal * percentage);
-}
-
-float getTotal(float subtotal, float tax) {
-  return ( subtotal + tax );
-}
-
 void receipt(string appetizer, string entree1, string entree2, float subtotal, float tax, float total) {
   cout << fixed << setprecision(2);
-  //string bill = "";
-  //stringstream push;
   cout << "Appetizer:" << "........................" << appetizer << endl;
   cout << "First Entree:" << "....................." << entree1 << endl;
   cout << "Second Entree:" << "...................." << entree2 << endl;
@@ -88,11 +64,9 @@ void receipt(string appetizer, string entree1, string entree2, float subtotal, f
   cout << "Tax:" << ".............................." << tax << endl;
   cout << "Total:" << "............................" << total << endl;
   cout << "Gratuity Guidelines:" << endl;
-  cout << "15%..............................." << getTip(subtotal, 0.15) << endl;
-  cout << "18%..............................." << getTip(subtotal, 0.18) << endl;
-  cout << "20%..............................." << getTip(subtotal, 0.20) << endl;
-  //push >> bill >> bill >> bill >> bill >> bill >> bill >> bill >> bill >> bill;
-  //cout << bill;
+  cout << "15%..............................." << (subtotal * 0.15) << endl;
+  cout << "18%..............................." << (subtotal * 0.18) << endl;
+  cout << "20%..............................." << (subtotal * 0.20) << endl;
 }
 
 #endif //RESTAURANT_H
