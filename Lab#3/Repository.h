@@ -178,7 +178,7 @@ bool WinnerTest()
 
 		grid[j] = grid[4] = grid[k] = 'T';
 
-		if(!diagonalWinner())
+		if(!winner())
 		{
 			return false;
 		}
