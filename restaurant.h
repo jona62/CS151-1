@@ -4,6 +4,8 @@
 #define length(array) (sizeof(array)/sizeof(array[0]))
 
 void menuA() {
+    cout << "Applebee’s Two for Twenty\n";
+    cout << "Two Entrees + One Appetizer\n\n";
     cout << "Appetizers:\n";
     cout << "1:  Two Caesar Side Salads                   (800 Cal.)\n";
     cout << "2:  Spinach + Artichoke Dip                  (960 Cal.)\n";
@@ -56,17 +58,33 @@ float getCalculate(float subtotal, float& tax, float& total, string entree[], st
 }
 
 void receipt(string appetizer, string entree1, string entree2, float subtotal, float tax, float total) {
-  cout << fixed << setprecision(2);
-  cout << "Appetizer:" << "........................" << appetizer << endl;
-  cout << "First Entree:" << "....................." << entree1 << endl;
-  cout << "Second Entree:" << "...................." << entree2 << endl;
-  cout << "Subtotal:" << "........................." << subtotal << endl;
-  cout << "Tax:" << ".............................." << tax << endl;
-  cout << "Total:" << "............................" << total << endl;
-  cout << "Gratuity Guidelines:" << endl;
-  cout << "15%..............................." << (subtotal * 0.15) << endl;
-  cout << "18%..............................." << (subtotal * 0.18) << endl;
-  cout << "20%..............................." << (subtotal * 0.20) << endl;
+  ofstream writeReceipt;
+  ifstream readReceipt;
+
+  writeReceipt.open("receipt.txt");
+
+  if (writeReceipt.is_open()) {
+    writeReceipt << fixed << setprecision(2);
+    writeReceipt << "                      RECEIPT\n";
+    writeReceipt << "Appetizer:" << "........................" << appetizer << endl;
+    writeReceipt << "First Entree:" << "....................." << entree1 << endl;
+    writeReceipt << "Second Entree:" << "...................." << entree2 << endl;
+    writeReceipt << "Subtotal:" << "........................." << subtotal << endl;
+    writeReceipt << "Tax:" << ".............................." << tax << endl;
+    writeReceipt << "Total:" << "............................" << total << endl;
+    writeReceipt << "Gratuity Guidelines:" << endl;
+    writeReceipt << "15%..............................." << (subtotal * 0.15) << endl;
+    writeReceipt << "18%..............................." << (subtotal * 0.18) << endl;
+    writeReceipt << "20%..............................." << (subtotal * 0.20) << endl;
+    writeReceipt.close();
+  }
+
+  readReceipt.open("receipt.txt");
+  if (readReceipt.is_open()) {
+    cout << readReceipt.rdbuf() << endl;
+    readReceipt.close();
+  }
+
 }
 
 #endif //RESTAURANT_H

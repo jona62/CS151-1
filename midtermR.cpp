@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include <sstream>
+#include <fstream>
 using namespace std;
 
 #include "restaurant.h"
