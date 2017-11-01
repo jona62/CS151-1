@@ -1,11 +1,11 @@
-                      RECEIPT
-Appetizer:........................Boneless Wings                           (1160 Cal.)
-First Entree:.....................Chicken Tenders Basket                   (1150 Cal.)
-Second Entree:....................Whisky Bacon Burger                      (1240 Cal.)
-Subtotal:.........................20.00
+....................RECEIPT.............
+Appetizer:........................Crunchy Onion Rings                      (1300 Cal.)
+First Entree:.....................Firecracker Shrimp Cavatappi             (1970 Cal.) [Plus 3.50]
+Second Entree:....................Double-Glazed Baby Back Ribs - Half Rack (550 Cal.) [Plus 3.50]
+Subtotal:.........................27.00
 Tax:..............................2.26
 Total:............................22.26
 Gratuity Guidelines:
-15%...............................3.00
-18%...............................3.60
-20%...............................4.00
+15%...............................4.05
+18%...............................4.86
+20%...............................5.40
