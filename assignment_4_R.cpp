@@ -15,8 +15,8 @@
 //01        (start)                                                         02
 //02        [int base1, base2, base3]                                       03
 //03        [srand( (unsigned)time(0) )]                                    04
-//04        [(rand() % 100 + 1) --> int randomNum1]                         05
-//05        [(rand() % 100 + 1) --> int randomNum2]                         06
+//04        [(rand() % 99 + 1) --> int randomNum1]                         05
+//05        [(rand() % 99 + 1) --> int randomNum2]                         06
 //06        /print("Enter three bases: ")/                                  07
 //07        /input --> base1, base2, base3/                                 08
 //08        /print("\n")/                                                   09
@@ -45,8 +45,8 @@ int main() {
 
   srand( (unsigned)time(0) );
 
-  int randomNum1 = (rand() % 100 + 1);
-  int randomNum2 = (rand() % 100 + 1);
+  int randomNum1 = (rand() % 99 + 1);
+  int randomNum2 = (rand() % 99 + 1);
 
   cout << "Enter three bases: ";
   cin >> base1 >> base2 >> base3;
