@@ -13,7 +13,6 @@
               places. Prints the receipt to a file named “receipt.txt” as well
               as displays it on the screen.
 */
-
 #include <iostream>
 #include <string>
 #include <iomanip>

@@ -19,6 +19,7 @@
 //10      /print("What would you like? Please choose by number:\n")/            11
 //11      (exit)
 */
+
 void menuA() {
     cout << "Applebees Two for Twenty\n";
     cout << "Two Entrees + One Appetizer\n\n";
