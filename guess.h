@@ -20,7 +20,7 @@
 //Label   Task                                                              Goto
 //01      (start: min,max,limit,guess_log)                                  02
 //02      [srand( (unsigned)time(0) )]                                      03
-//03      [init randomNum, (rand() % (max - min) + min) --> randomNum]      04
+//03      [init randomNum, (rand() % (max + min) --> randomNum]             04
 //04      [init guess]                                                      05
 //05      [init i, m, n, 0 -- > i, m, n]                                    06
 //06      < limit == 0 >                                                    07,10
