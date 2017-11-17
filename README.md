@@ -10,3 +10,5 @@ Assignment 4's header file: baseNNotation.h
 Midterm's header file: restaurant.h
 
 Assignment 5's header file: guess.h
+
+Assignment 6's header file: CP_command.h
