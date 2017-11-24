@@ -1,5 +1,5 @@
 //Team: <JO-EL>
-//Author: <Johnathan James>
+//Author: <Jonathan James>
 //Creation: <11-13-17>
 #ifndef HEIGHT_H
 #define HEIGHT_H
